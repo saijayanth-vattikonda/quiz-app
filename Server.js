@@ -6,25 +6,25 @@ const mongoose = require("mongoose");
 const app = express();
 const port = 8090;
 
-const mongoURI = process.env.MONGODB_URI;
-mongoose.connect(mongoURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => {
-    console.log('Connected to MongoDB');
-}).catch((err) => {
-    console.error('Error connecting to MongoDB', err);
-});
+// const mongoURI = process.env.MONGODB_URI;
+// mongoose.connect(mongoURI, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// }).then(() => {
+//     console.log('Connected to MongoDB');
+// }).catch((err) => {
+//     console.error('Error connecting to MongoDB', err);
+// });
 
-// mongoose.connect("mongodb://127.0.0.1:27017/Quiz", {
-//   // useNewUrlParser: true,
-//   // useUnifiedTopology: true,
-// });
-// const db = mongoose.connection;
-// db.on("error", console.error.bind(console, "MongoDB connection error:"));
-// db.once("open", () => {
-//   console.log("Connected to MongoDB");
-// });
+mongoose.connect("mongodb+srv://saijayanthvattikonda4599:saijayanth@clusterquiz-app.yogafc3.mongodb.net/", {
+  // useNewUrlParser: true,
+  // useUnifiedTopology: true,
+});
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
+db.once("open", () => {
+  console.log("Connected to MongoDB");
+});
 
 const questionSchema = new mongoose.Schema({
   question: String,
