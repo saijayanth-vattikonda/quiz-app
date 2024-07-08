@@ -1,6 +1,3 @@
-Since I wasn't able to access the specific content of the quiz app at the provided link, I'll create a general README file template for a quiz app. You can customize the details according to the specific features and technologies of your quiz app.
-
----
 
 # Quiz App
 
